@@ -42,4 +42,3 @@ if installing on a server:
 - restart nginx
 - `sudo ufw allow 'Nginx Full'`
 - https://stackoverflow.com/questions/24453388/nginx-reverse-proxy-causing-504-gateway-timeout
-- keepalive_timeout 6500; proxy_connect_timeout 600; proxy_send_timeout 600; proxy_read_timeout 600; send_timeout 6500; client_max_body_size 500M;

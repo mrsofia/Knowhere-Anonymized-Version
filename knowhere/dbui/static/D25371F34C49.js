@@ -1,0 +1,1 @@
+{"upper_frameBufferSize":2,"oscillationWindow":120,"activationThreshold":30000,"upperThreshold":60000,"numOscillation":2,"initThreshold":20000,"lowerThreshold":15000,"Frame_Stride_RMS":170,"lower_frameBufferSize":20}

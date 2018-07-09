@@ -1,0 +1,30 @@
+{% extends 'dbui/base.html' %}
+
+{% block content %}
+<h1>Welcome to Knowhere</h1>
+
+<p>Click here to view Chronos: <a href="chronos">Chronos</a></p>
+<p>Select a Session from this dropdown to get frames for that session:
+<div class="dropdown">
+    <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Choose a Session to view in Chronos
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    {% for session in sessions %}
+        <li><a class="dropdown-item" href="chronos/{{ session.id }}">Session: {{ session.id }}</a></li>
+    {% endfor %}
+    </div>
+</div>
+</p>
+<p>Click here to view the Uploader: <a href="uploader">Uploader</a></p>
+<p>Click here to view Sessions: <a href="sessions">Sessions</a></p>
+
+
+
+<p><a href="accounts/logout">Log Out</a></p>
+<p><a href="accounts/password_change">Change Password</a></p>
+<p><a href="accounts/password_reset">Reset Password</a></p>
+
+
+
+{% endblock %}

@@ -1,0 +1,9 @@
+*/static/*
+.DS_Store
+*.db
+*db.sqlite3
+.idea
+env/
+files_needed
+__pycache__
+migrations*

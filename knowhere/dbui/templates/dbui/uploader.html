@@ -1,0 +1,17 @@
+{% extends 'dbui/base.html' %}
+
+{% block content %}
+<h1>Upload DB Files</h1>
+
+{% if form.errors %}<p><strong> {{ form.errors }} </strong></p>{% endif %}
+
+<form action="{% url 'dbui:uploader' %}" method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    {{ form }}
+
+    <input type="submit" value="Upload">
+
+</form>
+{% endblock %}

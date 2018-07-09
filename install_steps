@@ -1,0 +1,38 @@
+https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04
+^ helps. but not all steps are valid so pay attention
+
+if installing locally:
+- ensure that the correct python 3 is installed; 3.6 or higher is recommended
+- ensure that pip3 is installed
+- pip3 install --upgrade pip
+- pip3 install virtualenv
+- clone project into folder
+- cd into folder
+- `virtualenv env`
+- `source env/bin/activate` this gets you into the virtualenv
+* NOTE that once you are in the env, you drop using pip3 and only use regular pip
+- `pip install -r requirements.txt`
+- grab the right settings.py from somewhere and copy it into the correct folder
+- `python manage.py runserver` should run the server locally, which will provide everything EXCEPT for async task capabilities. To do that, you will need to run a celery worker locally as well.
+
+* note to self: separate dev and prod requirements.txt portion
+
+if installing on a server:
+- set up non-root sudo user & log in as them
+- `sudo apt-get update`
+- `sudo apt-get install python3-pip python3-dev libpq-dev nginx`
+- `sudo -H pip3 install --upgrade pip`
+- `sudo -H pip3 install virtualenv`
+- clone project into folder
+- cd into folder
+- `virtualenv env`
+- `source env/bin/activate`
+- `pip install -r requirements.txt`
+- `pip install gunicorn`
+- grab the right settings.py from somewhere and copy it into the correct folder
+- create gunicorn systemd service file
+- configure nginx to proxy pass to gunicorn by creating sites-available file and simlinking to sites-enabled
+- restart nginx
+- `sudo ufw allow 'Nginx Full'`
+- https://stackoverflow.com/questions/24453388/nginx-reverse-proxy-causing-504-gateway-timeout
+- keepalive_timeout 6500; proxy_connect_timeout 600; proxy_send_timeout 600; proxy_read_timeout 600; send_timeout 6500; client_max_body_size 500M;

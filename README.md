@@ -10,7 +10,7 @@ Code edited and anonymized to preserve confidentiality and protect IP of custome
 https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04
 ^ helps. but not all steps are valid so pay attention
 
-###If installing locally:
+### If installing locally:
 - ensure that the correct python 3 is installed; 3.6 or higher is recommended
 - ensure that pip3 is installed
 - pip3 install --upgrade pip
@@ -25,7 +25,7 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postg
 - `python manage.py runserver` should run the server locally, which will provide everything EXCEPT for async task capabilities. To do that, you will need to run a celery worker locally as well.
 
 
-###If installing on a server:
+### If installing on a server:
 - set up non-root sudo user & log in as them
 - `sudo apt-get update`
 - `sudo apt-get install python3-pip python3-dev libpq-dev nginx`
